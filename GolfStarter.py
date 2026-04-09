@@ -37,6 +37,21 @@ def view_leaderboard(ids, names, scores, rounds, cuts):
 
         print(ids[i], names[i], par, rounds[i], status)
 
+def delete_player(ids, names, scores, rounds, cuts):
+    delete_id = int(input("ENter Golfer ID: "))
+
+    if delete_id in ids:
+        index = ids.index(delete_id)
+
+        ids.pop(index)
+        names.pop(index)
+        scores.pop(index)
+        rounds.pop(index)
+        cuts.pop(index)
+
+        print("Player Deleted!")
+    else:
+        print("ID not found!")#
 
 def main():
     filename = "golf_masters.txt"
