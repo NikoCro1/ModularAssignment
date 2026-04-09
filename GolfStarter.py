@@ -1,3 +1,28 @@
+def read_file(filename):
+    golfer_ids = []
+    player_names = []
+    par_score = []
+    rounds = []
+    cut_status = []
+
+    file = open(filename, 'r')
+
+    for line in file:
+        line = line.strip()
+        parts = line.split(',')
+
+        golfer_ids.append(int(parts[0]))
+        player_names.append(parts[1])
+        par_score.append(int(parts[2]))
+        rounds.append(int(parts[3]))
+        cut_status.append(int(parts[4]))
+
+    file.close()
+
+    return golfer_ids, player_names, par_score, rounds, cut_status
+
+
+
 def main():
     filename = "golf_masters.txt"
     golfer_ids, player_names, par_score, cut_status = read_file(filename)
