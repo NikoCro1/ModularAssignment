@@ -86,7 +86,7 @@ def update_cut(ids, names, cuts):
 
 def main():
     filename = "golf_masters.txt"
-    golfer_ids, player_names, par_score, cut_status = read_file(filename)
+    golfer_ids, player_names, par_score, rounds, cut_status = read_file(filename)
     choice = ""
     while choice != "8":
         print("\nMenu")
@@ -99,19 +99,23 @@ def main():
         print("7. Placeholder for Exam")
         print("8. Quit and save")
         choice = input("Enter choice: ")
-        if choice == "1":# display leader board
+        if choice == "1":
+            view_leaderboard(golfer_ids, player_names, par_score, rounds, cut_status)# display leader board
 
         elif choice == "2":# delete a player
+            delete_player(golfer_ids, player_names, par_score, rounds, cut_status)
 
         elif choice == "3":# add a new player
+            add_player(golfer_ids, player_names, par_score, rounds, cut_status)
 
         elif choice == "4":# update cut status
+            update_cut(golfer_ids, player_names, cut_status)
 
-        elif choice == "5":# TODO in exam
+        #elif choice == "5":# TODO in exam
 
-        elif choice == "6":# TODO in exam
+        #elif choice == "6":# TODO in exam
 
-        elif choice == '7':# TODO in exam
+        #elif choice == '7':# TODO in exam
 
         elif choice == "8":# save data and quit
             print("Data saved. Goodbye.")
@@ -120,4 +124,4 @@ def main():
 
 
 if __name__ == '__main__':
-main()
+    main()
