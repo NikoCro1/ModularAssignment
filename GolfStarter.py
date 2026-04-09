@@ -21,6 +21,21 @@ def read_file(filename):
 
     return golfer_ids, player_names, par_score, rounds, cut_status
 
+def view_leaderboard(ids, names, scores, rounds, cuts):
+    print("\n# Player                Par Round Status")
+
+    for i in range(len(ids)):
+        if scores[i] > 0:
+            par = "+" + str(scores[i])
+        else:
+            par = str(scores[i])
+
+        if cuts[i] == 1:
+            status = "\U0001F601"
+        else:
+            status = "\U00002369\U0000FE0F"
+
+        print(ids[i], names[i], par, rounds[i], status)
 
 
 def main():
