@@ -69,6 +69,21 @@ def add_player(ids, names, scores, rounds, cuts):
 
         print("Player Added.")
 
+def update_cut(ids, names, cuts):
+    search_id = int(input("Enter ID: "))
+
+    if search_id in ids:
+        index = ids.index(search_id)
+
+        if cuts[index] == 1:
+            print(names[index], "has made the cut.")
+        else:
+            print(names[index], "has not made the cut.")
+
+    else:
+        print("ID not found!")
+
+
 def main():
     filename = "golf_masters.txt"
     golfer_ids, player_names, par_score, cut_status = read_file(filename)
