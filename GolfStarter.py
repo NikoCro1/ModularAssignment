@@ -53,6 +53,22 @@ def delete_player(ids, names, scores, rounds, cuts):
     else:
         print("ID not found!")#
 
+def add_player(ids, names, scores, rounds, cuts):
+    new_id = int(input("Enter new Golfer ID: "))
+    if new_id in ids:
+        print("ID already exists!")
+    else:
+        name = input("Enter new name: ")
+        score = int(input("Enter score: "))
+
+        ids.append(new_id)
+        names.append(name)
+        scores.append(score)
+        rounds.append(2)
+        cuts.append(1)
+
+        print("Player Added.")
+
 def main():
     filename = "golf_masters.txt"
     golfer_ids, player_names, par_score, cut_status = read_file(filename)
